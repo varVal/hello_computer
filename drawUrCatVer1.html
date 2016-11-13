@@ -1,0 +1,330 @@
+<html>
+<head>
+	<title>Neutral Tanagram Square</title>
+	<style type="text/css">
+		.catSits{
+			position : relative;
+		  	width : 300px;
+			height : 350px;
+			outline : 1px solid red;
+		}
+		.demo{
+			position : absolute;
+			margin-top : 310px;
+		}
+		.hidden{
+			display :none;
+		}
+		#parallelogram{
+		  	position : absolute;
+		  	width : 0;
+			height : 0;
+			border-top : 25px solid rgb(0, 0, 0);
+			border-right : 50px solid rgb(141, 206, 228);
+			border-bottom : 25px solid rgb(207,2, 38);
+			border-left : 50px solid rgb(35, 122, 191);
+			outline : 1px solid rgb(255, 153, 0);
+			-webkit-transform: translate(0px, 0px) skew(-45deg) rotate(0deg);
+			-webkit-transform-origin: top left;
+			transform: translate(0px, 0px) skew(-45deg) rotate(0deg);
+			transform-origin: top left;
+		}
+		#squareLarge{
+		  	position : relative;
+		  	width : 200px;
+			height : 200px;
+			outline : 1px solid green;
+		}
+		#squareSmall{
+			position : absolute;
+			width : 0;
+			height : 0;
+			border-top : 35.5px solid rgb(0, 0, 0);
+			border-right : 35.5px solid rgb(141, 206, 228);
+			border-bottom : 35.5px solid rgb(207,2, 38);
+			border-left : 35.5px solid rgb(35, 122, 191);
+			outline : 1px solid rgb(255, 153, 0);
+			-webkit-transform: translate(0px, 0px) rotate(0deg);
+			-webkit-transform-origin: top left;
+			transform: translate(0px, 0px) rotate(0deg);
+			transform-origin: top left;
+		}
+		#triangleL_left{
+			position : absolute;
+			width : 0;
+			height : 0;
+			border-top : 100px solid rgb(0, 0, 0);
+			border-right : 100px solid transparent;
+			border-bottom : 100px solid transparent;
+			border-left : 100px solid transparent;
+			-webkit-transform: translate(0px, 0px) rotate(0deg) ;
+			-webkit-transform-origin: top left;
+			transform: translate(0px, 0px) rotate(0deg) ;
+			transform-origin: top left;
+		}
+		#triangleL_top{
+		  	position : absolute;
+			width : 0;
+			height : 0;
+			border-top : 100px solid rgb(0, 0, 0);
+			border-right : 100px solid transparent;
+			border-bottom : 100px solid transparent;
+			border-left : 100px solid transparent;
+			-webkit-transform: translate(0px, 0px) rotate(0deg) ;
+			-webkit-transform-origin: top left;
+			transform: translate(0px, 0px) rotate(0deg) ;
+			transform-origin: top left;
+		}
+		#triangleMedium{
+			position : absolute;
+			width : 0;
+			height : 0;
+			border-top : 50px solid rgb(0, 0, 0);
+			border-right : 50px solid transparent;
+			border-bottom : 50px solid transparent;
+			border-left : 50px solid rgb(35, 122, 191);
+			-webkit-transform: translate(0px, 0px) rotate(0deg) ;
+			-webkit-transform-origin: top left;
+			transform: translate(0px, 0px)
+		}
+		#triMed_refANDinDrawing{
+			position : absolute;
+			width : 0;
+			height : 0;
+			border-top : 50px solid rgb(0, 0, 0);
+			border-right : 50px solid transparent;
+			border-bottom : 50px solid transparent;
+			border-left : 50px solid rgb(35, 122, 191);
+			-webkit-transform: translate(0px,0px) rotate(0deg);
+			-webkit-transform-origin: top left;
+			transform: translate(0px, 0px) rotate(0deg);
+			transform-origin: top left;
+		}
+		#triMed_neutral{
+			position : absolute;
+			width : 0;
+			height : 0;
+			border-top : 50px solid rgb(0, 0, 0);
+			border-right : 50px solid transparent;
+			border-bottom : 50px solid transparent;
+			border-left : 50px solid rgb(35, 122, 191);
+			-webkit-transform: translate(0px, 0px) rotate(0deg) ;
+			-webkit-transform-origin: top left;
+			transform: translate(0px, 0px) rotate(0deg) ;
+			transform-origin: top left;
+		}
+		#triMed_ref{
+			position : absolute;
+			width : 0;
+			height : 0;
+			border-top : 50px solid rgb(0, 0, 0);
+			border-right : 50px solid transparent;
+			border-bottom : 50px solid transparent;
+			border-left : 50px solid rgb(35, 122, 191);
+			-webkit-transform: translate(0px, 0px) rotate(0deg) ;
+			-webkit-transform-origin: top left;
+			transform: translate(0px, 0px) rotate(0deg) ;
+			transform-origin: top left;
+		}
+		#triangleS_bottom{
+			position : absolute;
+			width : 0;
+			height : 0;
+			border-top : 50px solid rgb(0, 0, 0);
+			border-right : 50px solid transparent;
+			border-bottom : 50px solid transparent;
+			border-left : 50px solid transparent;
+			-webkit-transform: translate(0px, 0px) rotate(0deg) ;
+			-webkit-transform-origin: top left;
+			transform: translate(0px, 0px) rotate(0deg) ;
+			transform-origin: top left;
+		}
+		#triangleS_rt{
+			position : absolute;
+			width : 0;
+			height : 0;
+			border-top : 50px solid rgb(0, 0, 0);
+			border-right : 50px solid transparent;
+			border-bottom : 50px solid transparent;
+			border-left : 50px solid transparent;
+			-webkit-transform: translate(0px, 0px) rotate(0deg) ;
+			-webkit-transform-origin: top left;
+			transform: translate(0px, 0px) rotate(0deg) ;
+			transform-origin: top left;
+		}
+		#triS_Rot{
+			position : absolute;
+			width : 0;
+			height : 0;
+			border-top : 50px solid rgb(0, 0, 0);
+			border-right : 50px solid transparent;
+			border-bottom : 50px solid transparent;
+			border-left : 50px solid transparent;
+			-webkit-transform: translate(0px, 0px) rotate(0deg) ;
+			-webkit-transform-origin: top left;
+			transform: translate(0px, 0px) rotate(0deg) ;
+			transform-origin: top left;
+		}
+		.walkThru{
+			position : absolute;
+			width : 800px;
+			min-height : 200px;
+			margin-top : 100px;
+			margin-left : 200px;
+			border-top : 2px solid rgba(0, 0, 0, 0.3);
+			border-left : 2px solid rgba(0, 0, 0, 0.3);
+		}
+	</style>
+</head>
+<body>
+<div class = "catSits">
+	<div id = "squareLarge">
+		<div id = "triangleL_left"></div>
+		<div id = "triangleL_top"></div>
+		<div id = "triangleMedium"></div>
+		<div id = "squareSmall"></div>
+		<div id = "parallelogram"></div>
+		<div id = "triangleS_bottom"></div>
+		<div id = "triangleS_rt"></div>
+	</div>
+</div>
+<!-- 
+To make the cat : re-orient all triangles to their non-transformed state with the exception of the ske  w transformation for the parallelogram.
+-->
+<script type="text/javascript">
+
+		var sqS = document.getElementById("squareSmall");
+		var sqL = document.getElementById("squareLarge");
+		var triL_lt = document.getElementById("triangleL_left");
+		var triL_top = document.getElementById("triangleL_top");
+		var triS_rt = document.getElementById("triangleS_rt");
+		var triS_bot = document.getElementById("triangleS_bottom");
+		var parall = document.getElementById("parallelogram");
+		var triMed = document.getElementById("triangleMedium");
+
+		//figure out whether the representational element is a class or an id (document.getElementsByClassName will return an array)
+		function isNodeList(nodes) {  
+		    var result = Object.prototype.toString.call(nodes);
+		    if(result === '[object HTMLCollection]' || result === '[object NodeList]') {
+		        return true;
+		    }
+		    else{return false;}
+		}
+
+		//function that can set the style of an element given a key : value pair
+		function setStyle(element, property, value){
+			if(isNodeList(element)){
+				var nodes = element;
+				for(var i = 0; i < nodes.length; i++){
+					if(property == "height"){nodes[i].style.height = value + u;}
+					if(property == "width" || property == "depth"){nodes[i].style.width = value + u;}
+					if(property == "fontSize" || property == "font-size"){nodes[i].style.fontSize = value;}
+					//if(property == "color"){nodes[i].style.color = value;}
+					if(property == "backgroundColor" || property == "background-color"){nodes[i].style.backgroundColor = value;}
+					if(property == "borderTop" || property == "border-top"){nodes[i].style.borderTop = value;}
+					if(property == "borderRight" || property == "border-right"){nodes[i].style.borderRight = value;}
+					if(property == "borderBottom" || property == "border-bottom"){nodes[i].style.borderBottom = value;}
+					if(property == "borderLeft" || property == "border-left"){nodes[i].style.borderLeft = value;}
+					if(property == "transform"){nodes[i].style.transform = value;}
+				}
+			}
+			else{
+				if(property == "height"){element.style.height = value + u;} 
+				if(property == "width" || property == "depth"){element.style.width = value + u;}
+				if(property == "fontSize" || property == "font-size"){element.style.fontSize = value;}
+				if(property == "color"){nodes[i].style.color = value;}
+				if(property == "backgroundColor" || property == "background-color"){element.style.backgroundColor = value;}
+				if(property == "borderTop" || property == "border-top"){element.style.borderTop = value;}
+				if(property == "borderRight" || property == "border-right"){element.style.borderRight = value;}
+				if(property == "borderLeft" || property == "border-left"){element.style.borderLeft = value;}
+				if(property == "borderBottom" || property == "border-bottom"){element.style.borderBottom = value;}	
+				if(property == "transform"){element.style.transform = value;}			
+			}
+		}
+
+		//Write functions that can be called when we need basic triangle and parallelogram properties. For example, finding the hypoteneuse from a triangle's two sides, or the height of a triangle. All the triangles in this drawing are right_angle 45deg triangles so the sides are equal; but we may want to write the functions for the more general case of a non-45deg right_angle triangle so we can file the function in our library and get it when we need it for a different program.
+		function hypoten(side, side){var hyp = Math.sqrt((side * side) + (side * side)); return hyp;}
+		function triSideRtAngle(hyp){var side = Math.sqrt((hyp * hyp)/2);return side;}
+		function triH(side){var hyp = side; var h = hyp * Math.sin(45); return h; }
+		//Find the length of the skewed side of the parallelogram. I know areaof Parallelogram == area of the square (because that's the rule for the tangram), and I know the skew angle so Pythagorean Theorem gives the length of the other side
+		function parall_sideAngled(area, base){ var h = area/base; var hypot = h/Math.sin(45); return hypot;}
+		function diaParall_long(side_a, side_b, angle){var dia = Math.sqrt((side_a * side_a) + (side_b * side_b) - (2 * side_a * side_b *(Math.cos(angle)))); return dia;}
+
+		function neutralToCat(triS_side){
+			setStyle(triL_lt, "transform", "translate(0px, 179px) rotate(45deg)");  
+			/*
+			We need to rotate this element and translate it to make it part of the cat_body. The trick is 
+			1. to figure out where the transform-origin point is, 
+			2. and to realize that we're using a different Reference grid to translate the element than to 'define the border-size'. To translate these elements, we need to use the window coordinate system. (Why? The reason has to do with understanding the 'physics' behind the object's border property. Since we are defining 'what we see' entirely from the border property (by setting the width and height of the element to zero), our calculations for border-size are not the same as the visual geometric shape 'see' in the window. It's that geometric shape that we 'see' in the window that is the 'data as meaningful context', a 'cat Part').
+			
+			Walk_thru an example : The 'triL_lt' in this drawing will represent the "cat's back half" which in the drawing is in a position that means the cat is sitting. In order to orient the element from its default position, we need to rotate it - and then translate it vertically. Let's take as given that we'll rotate it elemnt.rot(45deg); and look at how we will figure out and find the data_value for that vertical translation.
+			MIDDLE SCHOOL GEOMETRY AND ALGEBRA - the question "what is the vertical translation of the cat's bottom?" 
+			One solution : the sum of 
+				[
+				small triangle hypoteneuse is 1/2 the side of the square_large's side so it equals 100px,
+				we know the square_small is square_large_area/8 and that the Math.sqrt(square_small_area) gives the square_small_side, 
+				hypoten(100, 100) - 71 which is the remainder of (a large_triangle_hypoteneuse - side of the square //70.4, 
+				100 - (hypoten(100, 100)/2) which is a large_triangle_side - (half of the large_triangle_hypoteneuse) == 29.29
+				]; //this is 200, but where is the pivot point.
+				(Getting lost - here's how I do it - I write out what I want - like that and then figure out a function to calculate it for me.)
+				
+				To figure out how to place the elements horizontally, we start from the element that touches the vertical axis and calculate from there : 
+				triH(side) where side one of the triangle's sides, here - a large triangle so triH(100) == 71,
+				medium_triangle is rotated 135deg, that means that the transformation_origin is the hypoteneuse (two times a small_triangle's side) distance away from the vertical axis and to place the shape triangle_medium, we need to move the element 1/2 the diagonal which is 71. Then we need to add the triH(triangle_large) which is 100 (remember for the translation calculations we need the dimensions of the shapes as they are in the window not the CSS border-width values and the hypoteneuse of the triangle_large is 200px),
+				the side of the parallelogram parall_sideAngled(5000, 100)
+
+			*/
+			
+			setStyle(triL_top, "transform", "translate(100px, 79px) rotate(90deg)");
+			setStyle(triMed, "transform", "translate(171px, 150px) rotate(135deg)");  //when we transform this, we need to find the triangle's height because that influences the horizontal translation. We can use one of the original sides as the hypotheneuse
+			setStyle(parall, "transform", "translate(171px, 150px) rotate(-135deg) skew(-45deg)"); 
+			setStyle(triS_rt, "transform", "translate(292px, 0px) rotate(90deg)"); 
+			setStyle(triS_bot, "transform", "translate(192px, " + (hypoten(70.4, 70.4)) +"px) rotate(-90deg)");//-11
+
+			setStyle(sqS, "transform", "translate(243px, 50px) rotate(45deg)");
+		}
+		neutralToCat(35.5);
+</script>
+<div class = "">
+	<div class = "walkThru">
+		<div id = "triMed_ref"></div>
+		<!-- <div id = "triS_Rot"></div> -->
+	</div>
+<div class = "demo">
+	<a href="../../../index.html"><em>home</em></a>
+	<h2>The <em>nature</em> of CSS Rotation</h2>
+	<em>Note</em> : in this drawing, all <code>border-top</code> are 'black', <code>border-right</code> are 'light-bluish, <code>border-bottom</code> are 'reddish', <code>border-left</code> are 'dark-bluish'.
+	<ol>Procedure : 
+		<li>Open the console.</li>
+		<li>Write a function that will take a selected element and rotate it a certain number of degrees.</li>
+		<li>Use that function to select the element with <code>id = "triMed_ref"</code> and explore the rotation you think you need for a specific 'part of the cat.'</li>
+		<li>Using geometric functions for triangles and squares, determine the translation values for each element except for the parallelogram.</li>
+		<li>The parallelogram.
+			<ul>
+				<li>Finding the two diagonals of the parallelogram. First, we know the angles of this parallelogram because we defined them by skewing the rectangle 45deg along the <em>x-axis</em>. We can use the algebraic Law of Cosines to find diagonal <em>d<sub>1</sub></em> = Math.sqrt((side_a + side_a) + (side_b * side_b) - 2 * side_a * side_b *(Math.cos(135))); where side_a and side_b are on either side of the angle. <em>(If you are wondering where the 135 came from, it's 180deg - 45deg.)</em></li>
+			</ul>
+		</li>
+	</ol>
+	<p><em>Quick-and-dirty</em> exploration of transform: in the console manipulate this element <code>triMed_ref</code> and <em>watch the magic.</em> <em>Sample code</em> : <code>function trial(element, degree){var tri = document.getElementById(element).style.transform = "rotate(" + degree + "deg)";}</code>
+	</p>
+	<p><strong><em>Note</em></strong> : if you just came from <a href="">here</a> and you looked at the source code of that page, look at how each element has been placed at initial CSS transformational translate(0, 0) and rotation(0deg) AND that all of the border settings have been standardized as triangles with the hypoteneuse of the  border-top filled and corner triangles the border-top and border-left are filled.</p>
+	<h3>Walk me through it</h3>
+	<p>
+		<em>In this drawing</em>, we use three properties of the <code>transform</code> property : <code>translate(x, y), rotate(deg), skew(deg)</code>.
+	</p>
+		<h3>Define the medium triangle</h3>
+		<p><em>Quick-and-dirty</em> : transform-origin is top left, (0, 0); <em>default</em> orientation for those triangles that are related to the container square by their hypoteneuse are rendered with a color value for the border-top; for those triangles that are related to the reference containing tangram square as a corner, they are rendered using with color values for their border-top and border-left. The default orientation for a shape is this 'reference position'.
+		</p>
+		<p class = "hidden"><em>Notes</em> : <!-- hide these -->
+			<em>This</em> is the medium triangle where the top and left borders have a color and the right and bottom borders are transparent. The origin for all tranformations is in the (0, 0) location. I chose this origin because it is the default for the Window origin. Conceptually, we can track the individual elements better if we maintain a consistent transformational origin. <em>Note</em> : I specified the <code>tranform-origin : top left;</code> in order to make sure the browser and I define our transformational origin the same way. <!-- show this as a movie or as d3 animation origin for window or for parent same, and tranform-origin : top left; as opposed to bottom left; or other valid settings-->
+		</p> 
+		<p>
+			<em>Explore</em>
+			Use the element that exists in its 'own' environment to 'get a handle' on rotation properties. <em>This</em> <a href="tanNeutral_cssVer1c.html">file</a> provides the HTML for the cat as a neutral tanagram where all of the parts have started with the exact same reference definitions (same transform-origin, borders top and left chosen for triangles). <strong>Procedure</strong> : first open the source code in a text editor and change the colors so they are meaningful aids in quickly evaluating which border is visible for each object. Then in the console, create a function that will let you rotate stuff, assign variables to select DOM elements and play around trying to create the cat or any other shape you want.
+			<br>
+			<em>Sample code</em> : <code>function trial(element, degree){var tri = document.getElementById(element).style.transform = "rotate(" + degree + "deg)";}</code>
+			</p>
+	</div>	
+</div>
+</body>
+</html>
